@@ -1,0 +1,81 @@
+{
+	"info": {
+		"_postman_id": "00f2dd6d-50a5-46b7-9d72-f44286349403",
+		"name": "Mobile Phone Reservation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Book Mobile Phone",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "user",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/mobile/111111111111111/book",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"mobile",
+						"111111111111111",
+						"book"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Return Mobile Phone",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "user",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/mobile/111111111111111/return",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"mobile",
+						"111111111111111",
+						"return"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

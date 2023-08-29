@@ -1,0 +1,36 @@
+version: "3.3"
+
+services:
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq_management
+    ports:
+      - 5672:5672 # (erlang) communication between the nodes and CLI tool
+      - 15672:15672 # communication with the web management API
+    volumes:
+      # data persistence
+      - /docker_conf/rabbitmq/data/:/var/lib/rabbitmq/
+    networks:
+      - backend
+    restart: always    
+  mobilephonereservation:
+    restart: always
+    build: .
+    image: mobilephonereservation
+    container_name: mobilephonereservation
+    depends_on:
+      - rabbitmq
+    ports:
+      - "8080:8080"
+    networks:
+      - frontend
+      - backend
+    volumes:
+      - ./logs:/app/logs # Map the logs directory
+      - ./conf:/app/conf # Map the configuration directory
+
+networks:
+  frontend:
+    driver: bridge
+  backend:
+    driver: bridge

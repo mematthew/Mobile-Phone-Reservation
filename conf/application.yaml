@@ -1,0 +1,39 @@
+spring:
+  autoconfigure:
+    exclude:
+  sql:
+    init:
+      mode: always
+  h2:
+    console.enabled: true
+  datasource:
+    url: jdbc:h2:mem:mydb
+    username: sa
+    password: password
+    driverClassName: org.h2.Driver
+  jpa:
+    spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+    defer-datasource-initialization: true
+  rabbitmq:
+    host: rabbitmq
+    port: 5672
+    username: guest
+    password: guest
+logging:
+  file.name: /app/logs/application.log
+  pattern:
+    console: "%d %-5level %logger : %msg%n"
+    file: "%d %-5level [%thread] %logger : %msg%n"
+  level:
+    com.example: debug
+    root: warn
+hibernate:
+  hbm2ddl:
+    auto: create
+mobile-phone-reservation:
+  exchange-names:
+    book-phone-exchange: book-phone-exchange
+    return-phone-exchange: return-exchange

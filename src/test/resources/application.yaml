@@ -1,0 +1,28 @@
+spring:
+  sql:
+    init:
+      mode: always
+  h2:
+    console.enabled: true
+  datasource:
+    url: jdbc:h2:mem:mydb
+    username: sa
+    password: password
+    driverClassName: org.h2.Driver
+    data: classpath:test_data.sql
+  jpa:
+    spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    defer-datasource-initialization: true
+logging:
+  level:
+    root: Info
+hibernate:
+  hbm2ddl:
+    auto: create
+mobile-phone-reservation:
+  exchange-names:
+    book-phone-exchange: book-phone-exchange
+    return-phone-exchange: return-exchange
