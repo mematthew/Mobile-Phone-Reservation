@@ -80,7 +80,6 @@ The following dependencies are used for unit testing:
 - [Mockito](https://site.mockito.org/): Mocking framework for unit tests.
 - [TestContainers](https://www.testcontainers.org/): Library for managing external dependencies in tests (e.g., RabbitMQ).
 - [Spring Boot Test](https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-features.html#boot-features-testing): Provides support for testing Spring Boot applications.
-- [Awaitility](https://github.com/awaitility/awaitility): Library for asynchronous testing.
 
 These dependencies enable effective testing, integration, and management of the project's functionality.
 
